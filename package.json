@@ -12,9 +12,9 @@
   },
   "devDependencies": {},
   "scripts": {
-     "eslint": "^4.0.0",
-    "eslint-config-aqua": "^1.0.0"
     "start": "node bot.js"
+    "eslint": "^4.0.0",
+    "eslint-config-aqua": "^1.0.0"
   },
   "keywords": [],
   "author": "",
