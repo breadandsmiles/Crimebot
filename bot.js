@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 const { Client, Util } = require('discord.js');
 const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
 const YouTube = require('simple-youtube-api');
@@ -55,9 +56,13 @@ client.on('message', async message => {
 		let tosend = ['```xl','PING đang lag sml:',`${client.ping} ms`,'```'];
 		message.channel.send(tosend.join('\n'));
 	};
-	if(message.content.startsWith(PREFIX + "avatar")) {
-		let user = message.mentions.users.first() || message.author;
-		message.channel.send(user.avatarURL)
+	if (message.content.startsWith(PREFIX+ "avatar")) {
+        let user = message.mentions.users.first() || message.author;
+        let embed = new Discord.RichEmbed()
+        .setAuthor(`${user.tag}`)
+        .setImage(user.avatarURL)
+        .setColor('RANDOM')
+		message.channel.send(embed)
 	};
 	
 	if(message.content.startsWith(PREFIX + "kick")) {
