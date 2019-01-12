@@ -16,13 +16,7 @@ client.on('error', console.error);
 
 client.on('ready', () => {
 	console.log('Tao online rồi');
-	client.user.setStatus('available')
-	client.user.setPresence({
-		game: {
-			name: '435456',
-			type: "PLAYING"
-		}
-	})
+	client.user.setActivity(`Music | ${PREFIX}`, { type: "streaming", url: "https://www.twitch.tv/twitch" });
 });
 
 client.on('disconnect', () => console.log('tao vừa bị disconnected, tao sẽ quay trở lại!'));
